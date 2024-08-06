@@ -179,12 +179,6 @@ This step generates masks to indicate valid geometry regions and performs instan
 
 - **Mask Generation**: Implemented in `masks.py`, this module generates masks that identify valid geometry within the image, focusing models on important areas during prediction.
 
-    ```python
-    def make_mask(tensor, task):
-        # Generates a mask to indicate valid pixels
-        ...
-    ```
-
 - **Instance Segmentation**: Implemented in `segment_instance.py`, this module extracts object instances using techniques like bounding box extraction and mask application, supporting tasks like semantic segmentation and object recognition.
 
 
@@ -210,9 +204,7 @@ cd ImmersiveDepth
 pip install -r requirements.txt
 ```
 
-**Recommended Setup**: Python 3.9, CUDA 
-
-12.1, and PyTorch 2.3.
+**Recommended Setup**: Python 3.9, CUDA 12.1, and PyTorch 2.3.
 
 ### Step 2: Download Pre-trained Checkpoints
 
