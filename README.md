@@ -31,134 +31,135 @@ ImmersiveDepth is a cutting-edge project designed to provide robust and accurate
 ## Project Structure
 
 ├── 3D
-│ ├── 3dopen.py
-│ └── exportmesh.py
+│   ├── 3dopen.py
+│   └── exportmesh.py
 ├── configs
-│ └── device
-│ ├── featureize.yaml
-│ ├── local.yaml
-│ └── nerf.yaml
+│   └── device
+│       ├── featureize.yaml
+│       ├── local.yaml
+│       └── nerf.yaml
 ├── example_data
-│ ├── BU1
-│ ├── BU2
-│ ├── Matter1
-│ ├── Matter2
-│ └── kitchen
+│   ├── BU1
+│   ├── BU2
+│   ├── Matter1
+│   ├── Matter2
+│   └── kitchen
 ├── modules
-│ ├── dataset
-│ │ ├── pycache
-│ │ ├── dataset.py
-│ │ └── sup_info.py
-│ ├── fields
-│ │ └── networks.py
-│ └── geo_predictors
-│ └── ImmersiveDepth
-│ ├── config
-│ │ ├── depth.yaml
-│ │ └── normal.yaml
-│ ├── data
-│ │ └── splits
-│ │ ├── metadata_images_split_scene.csv
-│ │ ├── test_hypersim_orig.csv
-│ │ ├── train_hypersim_orig.csv
-│ │ ├── train_val_test_blendedMVS.csv
-│ │ ├── train_val_test_debug.csv
-│ │ ├── train_val_test_full.csv
-│ │ ├── train_val_test_fullplus.csv
-│ │ ├── train_val_test_gso.csv
-│ │ ├── train_val_test_hypersim.csv
-│ │ ├── train_val_test_medium.csv
-│ │ ├── train_val_test_replica.csv
-│ │ ├── train_val_test_tiny.csv
-│ │ └── val_hypersim_orig.csv
-│ ├── ImmersiveDepth_dataset.py
-│ ├── init.py
-│ ├── augmentation.py
-│ ├── masks.py
-│ ├── refocus_augmentation.py
-│ └── splits.py
-│ ├── dataloader
-│ │ ├── component_datasets
-│ │ │ ├── blended_mvg
-│ │ │ ├── hm3d
-│ │ │ ├── hypersim
-│ │ │ ├── replica
-│ │ │ ├── replica_gso
-│ │ │ └── taskonomy
-│ │ ├── task_configs.py
-│ │ ├── taskonomy_dataset.py
-│ │ ├── transforms.py
-│ │ ├── init.py
-│ │ ├── ImmersiveDepth_dataset.py
-│ │ ├── README.md
-│ │ ├── masks.py
-│ │ ├── pytorch3d_utils.py
-│ │ ├── pytorch_lightning_datamodule.py
-│ │ ├── scene_metadata.py
-│ │ ├── segment_instance.py
-│ │ ├── splits.py
-│ │ ├── task_configs.py
-│ │ ├── transforms.py
-│ │ └── viz_utils.py
-│ ├── losses
-│ │ ├── init.py
-│ │ ├── masked_losses.py
-│ │ ├── midas_loss.py
-│ │ └── virtual_normal_loss.py
-│ ├── modules
-│ │ ├── midas
-│ │ │ ├── init.py
-│ │ │ ├── base_model.py
-│ │ │ ├── blocks.py
-│ │ │ ├── dpt_depth.py
-│ │ │ ├── midas_net.py
-│ │ │ ├── midas_net_custom.py
-│ │ │ ├── transforms.py
-│ │ │ └── vit.py
-│ │ ├── init.py
-│ │ ├── channel_attention.py
-│ │ └── unet.py
-│ ├── tools
-│ │ ├── download_depth_models.sh
-│ │ └── download_surface_normal_models.sh
-│ └── depth_anything_v2
-│ ├── dinov2_layers
-│ │ ├── init.py
-│ │ ├── attention.py
-│ │ ├── block.py
-│ │ ├── drop_path.py
-│ │ ├── layer_scale.py
-│ │ ├── mlp.py
-│ │ ├── patch_embed.py
-│ │ └── swiglu_fn.py
-│ └── util
-│ ├── blocks.py
-│ ├── transform.py
-│ ├── init.py
-│ ├── dinov2.py
-│ ├── dpt.py
-│ ├── ImmersiveDepth_normal_predictor.py
-│ ├── ImmersiveDepth_predictor.py
-│ ├── init.py
-│ ├── app.py
-│ ├── depth_model.py
-│ ├── geo_predictor.py
-│ ├── pano_fusion_inv_predictor.py
-│ ├── pano_fusion_normal_predictor.py
-│ ├── pano_geo_refiner.py
-│ ├── pano_joint_predictor (copy).py
-│ ├── pano_joint_predictor.py
-│ ├── init.py
-│ └── pre_checkpoints
-│ ├── README.md
-│ ├── utils
-│ ├── camera_utils.py
-│ ├── debug_utils.py
-│ ├── geo_utils.py
-│ ├── utils.py
-│ ├── config.yaml
-│ ├── core_exp_runner.py
-│ └── requirements.txt
+│   ├── dataset
+│   │   ├── __pycache__
+│   │   ├── dataset.py
+│   │   └── sup_info.py
+│   ├── fields
+│   │   └── networks.py
+│   └── geo_predictors
+│       └── ImmersiveDepth
+│           ├── config
+│           │   ├── depth.yaml
+│           │   └── normal.yaml
+│           ├── data
+│           │   └── splits
+│           │       ├── metadata_images_split_scene.csv
+│           │       ├── test_hypersim_orig.csv
+│           │       ├── train_hypersim_orig.csv
+│           │       ├── train_val_test_blendedMVS.csv
+│           │       ├── train_val_test_debug.csv
+│           │       ├── train_val_test_full.csv
+│           │       ├── train_val_test_fullplus.csv
+│           │       ├── train_val_test_gso.csv
+│           │       ├── train_val_test_hypersim.csv
+│           │       ├── train_val_test_medium.csv
+│           │       ├── train_val_test_replica.csv
+│           │       ├── train_val_test_tiny.csv
+│           │       └── val_hypersim_orig.csv
+│           ├── ImmersiveDepth_dataset.py
+│           ├── __init__.py
+│           ├── augmentation.py
+│           ├── masks.py
+│           ├── refocus_augmentation.py
+│           └── splits.py
+│       ├── dataloader
+│       │   ├── component_datasets
+│       │   │   ├── blended_mvg
+│       │   │   ├── hm3d
+│       │   │   ├── hypersim
+│       │   │   ├── replica
+│       │   │   ├── replica_gso
+│       │   │   └── taskonomy
+│       │   ├── task_configs.py
+│       │   ├── taskonomy_dataset.py
+│       │   ├── transforms.py
+│       │   ├── __init__.py
+│       │   ├── ImmersiveDepth_dataset.py
+│       │   ├── README.md
+│       │   ├── masks.py
+│       │   ├── pytorch3d_utils.py
+│       │   ├── pytorch_lightning_datamodule.py
+│       │   ├── scene_metadata.py
+│       │   ├── segment_instance.py
+│       │   ├── splits.py
+│       │   ├── task_configs.py
+│       │   ├── transforms.py
+│       │   └── viz_utils.py
+│       ├── losses
+│       │   ├── __init__.py
+│       │   ├── masked_losses.py
+│       │   ├── midas_loss.py
+│       │   └── virtual_normal_loss.py
+│       ├── modules
+│       │   ├── midas
+│       │   │   ├── __init__.py
+│       │   │   ├── base_model.py
+│       │   │   ├── blocks.py
+│       │   │   ├── dpt_depth.py
+│       │   │   ├── midas_net.py
+│       │   │   ├── midas_net_custom.py
+│       │   │   ├── transforms.py
+│       │   │   └── vit.py
+│       │   ├── __init__.py
+│       │   ├── channel_attention.py
+│       │   └── unet.py
+│       ├── tools
+│       │   ├── download_depth_models.sh
+│       │   └── download_surface_normal_models.sh
+│       └── depth_anything_v2
+│           ├── dinov2_layers
+│           │   ├── __init__.py
+│           │   ├── attention.py
+│           │   ├── block.py
+│           │   ├── drop_path.py
+│           │   ├── layer_scale.py
+│           │   ├── mlp.py
+│           │   ├── patch_embed.py
+│           │   └── swiglu_fn.py
+│           └── util
+│               ├── blocks.py
+│               ├── transform.py
+│               ├── __init__.py
+│               ├── dinov2.py
+│               ├── dpt.py
+│               ├── ImmersiveDepth_normal_predictor.py
+│               ├── ImmersiveDepth_predictor.py
+│               ├── __init__.py
+│               ├── app.py
+│               ├── depth_model.py
+│               ├── geo_predictor.py
+│               ├── pano_fusion_inv_predictor.py
+│               ├── pano_fusion_normal_predictor.py
+│               ├── pano_geo_refiner.py
+│               ├── pano_joint_predictor (copy).py
+│               ├── pano_joint_predictor.py
+│               ├── __init__.py
+│               └── pre_checkpoints
+│                   ├── README.md
+│               ├── utils
+│                   ├── camera_utils.py
+│                   ├── debug_utils.py
+│                   ├── geo_utils.py
+│                   ├── utils.py
+│                   ├── config.yaml
+│                   ├── core_exp_runner.py
+│                   └── requirements.txt
+
 
 
 
