@@ -28,6 +28,8 @@ ImmersiveDepth is a cutting-edge project designed to provide robust and accurate
 - [Results](#results)
 - [References](#references)
 
+
+\`\`\`
 ## Project Structure
 ├── 3D
 │ ├── 3dopen.py
@@ -158,7 +160,7 @@ ImmersiveDepth is a cutting-edge project designed to provide robust and accurate
 │ ├── config.yaml
 │ ├── core_exp_runner.py
 │ └── requirements.txt
-
+\`\`\`
 
 
 ## Methodology
