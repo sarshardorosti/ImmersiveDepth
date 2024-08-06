@@ -1,6 +1,4 @@
-# Let's create a README.md file with the given content.
 
-readme_content = """
 # ImmersiveDepth: Advanced 360-Degree Depth Estimation
 
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=Totoro97/PeRF)
