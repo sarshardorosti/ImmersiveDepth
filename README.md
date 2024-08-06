@@ -8,7 +8,7 @@
 
 ## Overview
 
-ImmersiveDepth is a cutting-edge project designed to provide robust and accurate monocular depth estimation (MDE) from 360-degree images. By integrating advanced models such as MiDaS v3.1 and Depth Anything V2, this project addresses the challenges of depth perception under varying environmental conditions, scale variations, and image complexities. It leverages the strengths of both models to enhance overall performance, offering a comprehensive solution for applications in VR, 3D mapping, and data visualization.
+ImmersiveDepth is a cutting-edge project designed to provide robust and accurate monocular depth estimation (MDE) from 360-degree images. By integrating advanced models such as MiDaS v3.1 and Depth Anything V2, this project addresses the challenges of depth perception under varying environmental conditions, scale variations, and image complexities. It leverages the strengths of both models to enhance overall performance, offering a comprehensive solution for applications in Animation, Game, AR, VR, and 3D visualization.
 
 ## Features
 
@@ -28,7 +28,7 @@ ImmersiveDepth is a cutting-edge project designed to provide robust and accurate
 - [Results](#results)
 - [References](#references)
 
-
+## Project-Structure
 ```
 ## Project Structure
 ├── 3D
