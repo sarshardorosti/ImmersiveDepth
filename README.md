@@ -131,30 +131,7 @@ This phase leverages advanced model architectures for depth estimation, using Vi
 
 - **Depth Prediction Models**: Files such as `dpt_depth.py`, `midas_net.py`, `midas_net_custom.py`, and `depth_model.py` implement models like `DPTDepthModel` and `MidasNet`, utilizing Vision Transformers for feature extraction and custom decoders for depth map generation.
 
-    ```python
-    class DPTDepthModel(DPT):
-        def forward(self, x):
-            layer_1, layer_2, layer_3, layer_4 = forward_vit(self.pretrained, x)
-            path_4 = self.scratch.refinenet4(layer_4)
-            path_3 = self.scratch.refinenet3(path_4, layer_3)
-            path_2 = self.scratch.refinenet2(path_3, layer_2)
-            path_1 = self.scratch.refinenet1(path_2, layer_1)
-            out = self.scratch.output_conv(path_1)
-            return out.squeeze(dim=1)
-    ```
-
 - **Vision Transformer Components**: Implemented in `vit.py`, these components transform image patches into sequences of tokens processed through transformer layers.
-
-    ```python
-    def forward_vit(pretrained, x):
-        b, c, h, w = x.shape
-        glob = pretrained.model.forward_flex(x)
-        layer_1 = pretrained.activations["1"]
-        layer_2 = pretrained.activations["2"]
-        layer_3 = pretrained.activations["3"]
-        layer_4 = pretrained.activations["4"]
-        ...
-    ```
 
 - **Depth Anything V2 Model Components**: Implemented in the `depth_anything_v2/` directory, this module includes components like `attention.py`, `block.py`, `layer_scale.py`, and others, providing a robust architecture for depth estimation.
 
@@ -168,9 +145,9 @@ In this stage, the system predicts depth and normal maps, refining them for geom
     class PanoJointPredictor(GeoPredictor):
         def __init__(self):
             super().__init__()
-            self.depth_predictor1 = ImmersiveDepthPredictor()  # Initialize first depth predictor
+            self.depth_predictor1 = MidasPredictor()  # Initialize first depth predictor
             self.depth_predictor2 = DepthAnything2(encoder='vitl')  # Initialize second depth predictor with Vision Transformer Large encoder
-            self.normal_predictor = ImmersiveDepthNormalPredictor()  # Initialize normal predictor
+            self.normal_predictor = OmniDepthNormalPredictor()  # Initialize normal predictor
 
         def __call__(self, img, ref_distance, mask, gen_res=384, ...):
             ...
@@ -210,11 +187,6 @@ This step generates masks to indicate valid geometry regions and performs instan
 
 - **Instance Segmentation**: Implemented in `segment_instance.py`, this module extracts object instances using techniques like bounding box extraction and mask application, supporting tasks like semantic segmentation and object recognition.
 
-    ```python
-    def extract_instances(img, return_masks=False):
-        # Extracts instances from an image, returning bounding boxes, labels, and masks
-        ...
-    ```
 
 ### 6. Visualization and Output Handling
 
@@ -222,61 +194,9 @@ The final step involves visualizing and saving predicted depth and normal maps, 
 
 - **Visualization Utilities**: Implemented in `utils.py` and `viz_utils.py`, these modules visualize predicted depth and normal maps using functions like `show_batch_images`, providing graphical representations of the results.
 
-    ```python
-    def show_batch_images(batch, batch_idx, view_idxs=None, keys=('rgb', 'depth_euclidean'), figsize=None):
-        # Visualizes a batch of images using Matplotlib
-        ...
-    ```
-
 - **Output Management**: Saves results to disk using utilities like `write_image`, facilitating thorough evaluation and analysis of model outputs.
 
-    ```python
-    def write_image(save_path, image):
-        # Saves an image to the specified path
-        ...
-    ```
 
-### 7. Interactive Testing with Gradio
-
-An interactive web-based interface allows users to test the model with uploaded images, providing real-time demonstration and feedback of depth estimation capabilities.
-
-- **Gradio Interface**: Implemented in `app.py`, this module launches a `Gradio` interface for users to upload images and receive depth maps as output, demonstrating the system's effectiveness in real-time.
-
-    ```python
-    def predict_depth(image):
-        return model.infer_image(image)
-
-    with gr.Blocks(css=css) as demo:
-        gr.Markdown(title)
-        gr.Markdown(description)
-        gr.Markdown("### Depth Prediction demo")
-
-        with gr.Row():
-            input_image = gr.Image(label="Input Image", type='numpy', elem_id='img-display-input')
-            depth_image_slider = ImageSlider(label="Depth Map with Slider View", elem_id='img-display-output', position=0.5)
-        submit = gr.Button(value="Compute Depth")
-        gray_depth_file = gr.File(label="Grayscale depth map", elem_id="download",)
-        raw_file = gr.File(label="16-bit raw output (can be considered as disparity)", elem_id="download",)
-
-        def on_submit(image):
-            original_image = image.copy()
-            depth = predict_depth(image[:, :, ::-1])
-            raw_depth = Image.fromarray(depth.astype('uint16'))
-            tmp_raw_depth = tempfile.NamedTemporaryFile(suffix='.png', delete=False)
-            raw_depth.save(tmp_raw_depth.name)
-
-            depth = (depth - depth.min()) / (depth.max() - depth.min()) * 255.0
-            depth = depth.astype(np.uint8)
-            colored_depth = (cmap(depth)[:, :, :3] * 255).astype(np.uint8)
-
-            gray_depth = Image.fromarray(depth)
-            tmp_gray_depth = tempfile.NamedTemporaryFile(suffix='.png', delete=False)
-            gray_depth.save(tmp_gray_depth.name)
-
-            return [(original_image, colored_depth), tmp_gray_depth.name, tmp_raw_depth.name]
-
-        submit.click(on_submit, inputs=[input_image], outputs=[depth_image_slider, gray_depth_file, raw_file])
-    ```
 
 ## Installation
 
