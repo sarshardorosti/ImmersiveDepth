@@ -259,11 +259,6 @@ Download the primary depth and normal detection models from the link below and p
 
 - [Download Primary Models](https://github.com/sarshardorosti/ImmersiveDepth/tree/main/pre_checkpoints)
 
-**Instructions:**
-1. Visit the link above to access the repository.
-2. Download the necessary files for primary depth and normal detection.
-3. Save the downloaded files in the `pre_checkpoints` directory of your project:
-
    ```plaintext
    ImmersiveDepth/
    └── pre_checkpoints/
@@ -277,11 +272,6 @@ Download the primary depth and normal detection models from the link below and p
 Download the secondary depth detection model from the link below and place it in the `modules/geo_predictors/checkpoints` directory:
 
 - [Download Secondary Model](https://github.com/sarshardorosti/ImmersiveDepth/tree/main/modules/geo_predictors/checkpoints)
-
-**Instructions:**
-1. Visit the link above to access the repository.
-2. Download the necessary files for secondary depth detection.
-3. Save the downloaded files in the `modules/geo_predictors/checkpoints` directory:
 
    ```plaintext
    ImmersiveDepth/
