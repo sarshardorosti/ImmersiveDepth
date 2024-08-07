@@ -1,9 +1,10 @@
-This folder should contain the several checkpoint files of pretrained inpainting and geometry estimation models:
-- 512-inpainting-ema.ckpt
-- big-lama.ckpt
-- omnidata_dpt_depth_v2.ckpt
-- omnidata_dpt_normal_v2.ckpt
+## Pre-trained Models
 
-For the diffusion model `512-inpainting-ema.ckpt`, the download link is [here](https://huggingface.co/stabilityai/stable-diffusion-2-inpainting/blob/main/512-inpainting-ema.ckpt).
+We provide **four models** of varying scales for robust relative depth estimation:
 
-Checkpoint files of other models can be found in this [dropbox link](https://www.dropbox.com/scl/fo/348s01x0trt0yxb934cwe/h?rlkey=a96g2incso7g53evzamzo0j0y&dl=0).
+| Model | Params | Checkpoint |
+|:-|-:|:-:|
+| Depth-Anything-V2-Small | 24.8M | [Download](https://huggingface.co/depth-anything/Depth-Anything-V2-Small/resolve/main/depth_anything_v2_vits.pth?download=true) |
+| Depth-Anything-V2-Base | 97.5M | [Download](https://huggingface.co/depth-anything/Depth-Anything-V2-Base/resolve/main/depth_anything_v2_vitb.pth?download=true) |
+| Depth-Anything-V2-Large | 335.3M | [Download](https://huggingface.co/depth-anything/Depth-Anything-V2-Large/resolve/main/depth_anything_v2_vitl.pth?download=true) |
+| Depth-Anything-V2-Giant | 1.3B | Coming soon |
