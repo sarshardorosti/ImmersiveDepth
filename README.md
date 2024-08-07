@@ -311,13 +311,11 @@ python core_exp_runner.py --config-name nerf dataset.image_path=$(pwd)/example_d
 This command initializes the training process, loading the example dataset and preparing the system for depth estimation.
 
 
-#### Open 3D Model
+This command initializes the training process, loading the example dataset and preparing the system for depth estimation.
 
-To visualize and interact with the generated 3D models, run the following command:
+Note: The example_data directory contains images organized in separate folders for testing purposes. After processing, the results will be saved in the exp directory.
 
-```bash
-python core_exp_runner.py --config-name nerf dataset.image_path=$(pwd)/example_data/kitchen/image.png device.base_exp_dir=$(pwd)/exp mode=render_dense is_continue=true
-```
+
 
 
 
