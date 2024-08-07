@@ -247,9 +247,54 @@ pip install -r requirements.txt
 
 **Recommended Setup**: Python 3.9, CUDA 12.1, and PyTorch 2.3.
 
+---
+
 ### Step 2: Download Pre-trained Checkpoints
 
-Download the necessary pre-trained model checkpoints as shown [here](./pre_checkpoints).
+To achieve accurate depth and normal estimations, you need to download the pre-trained model checkpoints. Follow the instructions below to set up the models correctly.
+
+#### Primary Depth and Normal Detection Models
+
+Download the primary depth and normal detection models from the link below and place them in the `pre_checkpoints` directory:
+
+- [Download Primary Models](https://github.com/sarshardorosti/ImmersiveDepth/tree/main/pre_checkpoints)
+
+**Instructions:**
+1. Visit the link above to access the repository.
+2. Download the necessary files for primary depth and normal detection.
+3. Save the downloaded files in the `pre_checkpoints` directory of your project:
+
+   ```plaintext
+   ImmersiveDepth/
+   └── pre_checkpoints/
+       ├── model_primary_depth.pth
+       ├── model_primary_normal.pth
+       └── ...
+   ```
+
+#### Secondary Depth Detection Model
+
+Download the secondary depth detection model from the link below and place it in the `modules/geo_predictors/checkpoints` directory:
+
+- [Download Secondary Model](https://github.com/sarshardorosti/ImmersiveDepth/tree/main/modules/geo_predictors/checkpoints)
+
+**Instructions:**
+1. Visit the link above to access the repository.
+2. Download the necessary files for secondary depth detection.
+3. Save the downloaded files in the `modules/geo_predictors/checkpoints` directory:
+
+   ```plaintext
+   ImmersiveDepth/
+   └── modules/
+       └── geo_predictors/
+           └── checkpoints/
+               ├── model_secondary_depth.pth
+               └── ...
+   ```
+
+Ensure that all the model files are correctly placed in their respective directories before proceeding with the usage and training sections.
+
+---
 
 ## Usage
 
