@@ -137,9 +137,15 @@ This phase leverages advanced model architectures for depth estimation, using Vi
 
 ### 4. Prediction and Refinement
 
-In this stage, the system predicts depth and normal maps, refining them for geometric consistency.
+In this stage, the system predicts depth and normal maps, refining them for geometric consistency and combines outputs from multiple models for enhanced results.
 
-- **Joint Prediction**: Files such as `pano_joint_predictor.py`, `ImmersiveDepth_predictor.py`, and `ImmersiveDepth_normal_predictor.py` integrate models for depth and normal map prediction, combining outputs for enhanced results.
+#### Combination of Model Outputs
+
+The combination of outputs from **MiDaS v3.1** and **Depth Anything V2** is crucial for improving depth prediction accuracy. This is achieved by leveraging the strengths of each model to mitigate their respective weaknesses. The integration of these models is primarily handled in:
+
+- **`ImmersiveDepth_predictor.py`** and **`ImmersiveDepth_normal_predictor.py`**: These files handle the prediction and integration of depth and normal maps from both models, combining their strengths to improve the final output.
+
+- **`pano_joint_predictor.py`**: This file is key for integrating the models, as it combines the predictions from both depth and normal map models to produce better results.
 
     ```python
     class PanoJointPredictor(GeoPredictor):
@@ -150,16 +156,54 @@ In this stage, the system predicts depth and normal maps, refining them for geom
             self.normal_predictor = OmniDepthNormalPredictor()  # Initialize normal predictor
 
         def __call__(self, img, ref_distance, mask, gen_res=384, ...):
-            ...
             for i in range(n_pers):
                 with torch.no_grad():
                     intri = {'fx': fx[i].item(), 'fy': fy[i].item(), 'cx': cx[i].item(), 'cy': cy[i].item()}
                     pred_depth1 = self.depth_predictor1.predict_depth1(pers_imgs[i: i+1], intri=intri).clip(0., None)
                     pred_depth2 = self.depth_predictor2.predict_depth2(img_pil).clip(0., None)
+                    # Combine outputs from both models
+                    pred_depth_combined = self.combine_depths(pred_depth1, pred_depth2)
                     pred_normals = self.normal_predictor.predict_normal(pers_imgs[i: i+1])
-                    ...
+    ```
+#### Image Post-Processing
+
+Image post-processing is applied to enhance the quality of the output depth maps, addressing issues like noise, fog, and sharpness. This is accomplished through various techniques implemented in:
+
+- **`augmentation.py`**: This file applies image enhancement techniques such as Gaussian filtering, CLAHE (Contrast Limited Adaptive Histogram Equalization), and dehazing to improve the clarity and quality of the depth maps.
+
+    ```python
+    class GaussianFilter(object):
+        def __call__(self, image):
+            return cv2.GaussianBlur(image, (5, 5), 0)
+
+    class CLAHE(object):
+        def __init__(self, clip_limit=2.0, tile_grid_size=(8, 8)):
+            self.clahe = cv2.createCLAHE(clipLimit=clip_limit, tileGridSize=tile_grid_size)
+
+        def __call__(self, image):
+            return self.clahe.apply(image)
+
+    class Dehazing(object):
+        def __call__(self, image):
+            # Implement dehazing technique
+            ...
+
+    # Applying these augmentations in the preprocessing pipeline
+    class AugmentationPipeline:
+        def __init__(self):
+            self.augmentations = [GaussianFilter(), CLAHE(), Dehazing()]
+
+        def __call__(self, image):
+            for augmentation in self.augmentations:
+                image = augmentation(image)
+            return image
     ```
 
+### Summary
+
+The combination of model outputs and image post-processing plays a critical role in the ImmersiveDepth project. By intelligently integrating predictions from multiple models and applying advanced image processing techniques, the system achieves higher accuracy and stability in depth estimation. This approach significantly improves the system's resilience to various environmental conditions and enhances detail recognition, providing robust depth estimation solutions.
+
+---
 - **Geometry Refinement**: Implemented in `pano_geo_refiner.py` and `geo_utils.py`, this process refines depth and normal maps by optimizing geometric consistency, aligning predictions across multiple views, and iteratively improving results.
 
     ```python
