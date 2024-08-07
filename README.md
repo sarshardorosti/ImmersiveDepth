@@ -198,9 +198,6 @@ Image post-processing is applied to enhance the quality of the output depth maps
                 image = augmentation(image)
             return image
     ```
-
-### Summary
-
 The combination of model outputs and image post-processing plays a critical role in the ImmersiveDepth project. By intelligently integrating predictions from multiple models and applying advanced image processing techniques, the system achieves higher accuracy and stability in depth estimation. This approach significantly improves the system's resilience to various environmental conditions and enhances detail recognition, providing robust depth estimation solutions.
 
 ---
@@ -277,7 +274,6 @@ To visualize and interact with the generated 3D models, run the following comman
 python core_exp_runner.py --config-name nerf dataset.image_path=$(pwd)/example_data/kitchen/image.png device.base_exp_dir=$(pwd)/exp mode=render_dense is_continue=true
 ```
 
-This command processes the input image to generate and render a dense 3D model.
 
 
 ## Evaluation Metrics
