@@ -225,70 +225,19 @@ This step generates masks to indicate valid geometry regions and performs instan
 
 ### 6. Visualization and Output Handling
 
-The final step involves visualizing and saving predicted depth and normal maps, allowing for evaluation and analysis of the results. This includes generating and exporting 3D models from the estimated depth data.
+This stage involves visualizing and saving predicted depth maps, as well as generating 3D models for further analysis.
 
-- **Visualization Utilities**: Implemented in `utils.py` and `viz_utils.py`, these modules visualize predicted depth and normal maps using functions like `show_batch_images`, providing graphical representations of the results.
+- **Visualization Utilities**: Implemented in `utils.py` and `viz_utils.py`, these modules visualize depth and normal maps, providing graphical representations of the results.
 
-- **Output Management**: Saves results to disk using utilities like `write_image`, facilitating thorough evaluation and analysis of model outputs.
+- **Output Management**: Uses utilities like `write_image` to save results, enabling detailed evaluation and analysis.
 
-#### Roles of `core_exp_runner.py`, `3dopen.py`, and `exportmesh.py`
+#### Roles of Key Files
 
-- **`core_exp_runner.py`**: This script is the primary execution point for the project's depth estimation workflow. It handles the entire process from reading input images, executing the depth prediction models, and outputting the results. 
+- **`core_exp_runner.py`**: Executes the depth estimation workflow, using `DepthModel` and `GeoPredictor` to predict and save depth maps as PLY files.
 
-  - **Depth Estimation Execution**: Manages the flow of data from input images through the depth prediction models, handling all necessary computations and configurations.
-  - **Output Generation**: Produces the depth and normal maps, which are used for further processing or directly visualized.
+- **`3dopen.py`**: Loads and visualizes 3D models using Open3D, allowing for interactive examination of PLY files.
 
-  ```python
-  def main(cfg):
-      depth_estimator = DepthEstimator(cfg)
-      depth_map = depth_estimator.estimate_depth(input_image)
-
-      # Produce output results
-      output_path = os.path.join(cfg.output_dir, "depth_output.obj")
-      save_mesh_from_depth(depth_map, output_path)
-      print(f"Depth estimation completed. Results saved at {output_path}")
-  ```
-
-- **`3dopen.py`**: This file is responsible for opening and preparing 3D models for visualization and manipulation. It can load existing 3D models and prepare them for further processing or viewing.
-
-  - **3D Initialization and Loading**: Sets up the necessary environment for 3D rendering and manipulation, providing functions to load and handle 3D models.
-
-  ```python
-  import trimesh
-
-  def open_3d_model(file_path):
-      # Load a 3D model from a file
-      mesh = trimesh.load(file_path)
-      print(f"3D model loaded from {file_path}")
-      return mesh
-  ```
-
-- **`exportmesh.py`**: Converts depth map data into 3D meshes and exports these meshes to common 3D formats, such as FBX, OBJ, or PLY. If required, it can convert models into the FBX format for use in various applications.
-
-  - **Mesh Generation**: Converts depth maps into a 3D mesh by defining vertices and faces.
-  - **FBX Export**: Provides functionality to export meshes in the FBX format for compatibility with a wide range of 3D applications.
-
-  ```python
-  import trimesh
-  import fbx  # Assuming a library or module for FBX conversion
-
-  def save_mesh(vertices, faces, output_path, file_format='obj'):
-      mesh = trimesh.Trimesh(vertices=vertices, faces=faces)
-      if file_format.lower() == 'fbx':
-          mesh.export(output_path.replace('.obj', '.fbx'))
-          print(f"3D mesh exported as FBX to {output_path.replace('.obj', '.fbx')}")
-      else:
-          mesh.export(output_path)
-          print(f"3D mesh exported to {output_path}")
-  ```
-
-### Summary
-
-In the **ImmersiveDepth** project, the processes of visualization and output handling are managed through a combination of depth estimation, 3D model preparation, and format conversion:
-
-- **`core_exp_runner.py`**: Executes the full workflow, from depth estimation to output generation.
-- **`3dopen.py`**: Loads and prepares 3D models for visualization or further processing.
-- **`exportmesh.py`**: Handles the conversion of depth maps into 3D meshes and exports them, supporting conversion to FBX format if required.
+- **`exportmesh.py`**: Converts PLY files to FBX format, making 3D models compatible with various 3D applications.
 
 These scripts work together to ensure that the project delivers robust and accurate 3D depth estimation and visualization capabilities, suitable for applications such as VR, AR, and 3D visualization.
 
