@@ -281,34 +281,10 @@ python core_exp_runner.py --config-name nerf dataset.image_path=$(pwd)/example_d
 The project's performance is evaluated using metrics such as Absolute Relative Error (AbsRel), Mean Absolute Error (MAE), Root Mean Square Error (RMSE), and more. These metrics ensure that depth predictions are accurate and reliable, aligning closely with ground-truth values.
 
 - **Absolute Relative Error (AbsRel)**: Measures the average of the absolute differences between the predicted depth and the ground-truth depth, relative to the ground-truth depth.
-
-    \[
-    \mathrm{AbsRel}=\frac{1}{N}\sum_{i=1}^{N}\frac{\left|z_i-z_i^\ast\right|}{z_i^\ast}
-    \]
-
 - **Mean Absolute Error (MAE)**: Calculates the average of the absolute differences between the predicted depth and the ground-truth depth.
-
-    \[
-    \mathrm{MAE}=\frac{1}{N}\sum_{i=1}^{N}\left|z_i-z_i^\ast\right|
-    \]
-
 - **Root Mean Square Error (RMSE)**: Measures the square root of the average of the squared differences between the predicted depth and the ground-truth depth.
-
-    \[
-    \mathrm{RMSE}=\sqrt{\frac{1}{N}\sum_{i=1}^{N}\left(z_i-z_i^\ast\right)^2}
-    \]
-
 - **Log Root Mean Square Error (RMSE(log))**: Similar to RMSE but operates in the logarithmic space, measuring the square root of the average of the squared logarithmic differences.
-
-    \[
-    \mathrm{RMSE(log)}=\sqrt{\frac{1}{N}\sum_{i=1}^{N}\left(\log_{10}{z_i}-\log_{10}{z_i^\ast}\right)^2}
-    \]
-
 - **Square Relative Error (SqRel)**: Calculates the average of the squared differences between the predicted depth and the ground-truth depth, relative to the ground-truth depth.
-
-    \[
-    \mathrm{SqRel}=\frac{1}{N}\sum_{i=1}^{N}\frac{\left(z_i-z_i^\ast\right)^2}{z_i^\ast}
-    \]
 
 
 ## Results
