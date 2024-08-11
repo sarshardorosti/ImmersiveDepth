@@ -10,6 +10,8 @@
 
 ImmersiveDepth is a cutting-edge project designed to provide robust and accurate monocular depth estimation (MDE) from 360-degree images. By integrating advanced models such as MiDaS v3.1 and Depth Anything V2, this project addresses the challenges of depth perception under varying environmental conditions, scale variations, and image complexities. It leverages the strengths of both models to enhance overall performance, offering a comprehensive solution for applications in Animation, Game, AR, VR, and 3D visualization.
 
+![Diagram](https://github.com/user-attachments/assets/cddf80be-bdac-4436-bd16-800d226388a2)
+
 ## Features
 
 - **Model Integration**: Combines MiDaS v3.1 and Depth Anything V2 to leverage the strengths of both models for improved depth prediction accuracy.
@@ -200,6 +202,7 @@ Image post-processing is applied to enhance the quality of the output depth maps
     ```
 The combination of model outputs and image post-processing plays a critical role in the ImmersiveDepth project. By intelligently integrating predictions from multiple models and applying advanced image processing techniques, the system achieves higher accuracy and stability in depth estimation. This approach significantly improves the system's resilience to various environmental conditions and enhances detail recognition, providing robust depth estimation solutions.
 
+
 ---
 - **Geometry Refinement**: Implemented in `pano_geo_refiner.py` and `geo_utils.py`, this process refines depth and normal maps by optimizing geometric consistency, aligning predictions across multiple views, and iteratively improving results.
 
@@ -334,6 +337,7 @@ The project's performance is evaluated using metrics such as Absolute Relative E
 
 The developed system has demonstrated superior performance in creating precise distance maps from 360-degree images. By combining outputs from both MiDaS v3.1 and Depth Anything V2, the project achieves high accuracy and stability in depth predictions. The results indicate significant improvements over existing models, with enhanced detail recognition and resilience to environmental variations.
 
+![Sheet copy](https://github.com/user-attachments/assets/8ea28155-b08e-466c-ae5c-805f8ff5b046)
 
 ### Key Findings
 
