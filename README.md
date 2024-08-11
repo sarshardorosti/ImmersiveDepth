@@ -1,9 +1,7 @@
 # ImmersiveDepth: Advanced 360-Degree Depth Estimation
 
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=sarshardorosti/ImmersiveDepth)
-<div align="center">
-    <img src=![Diagram](https://github.com/user-attachments/assets/cddf80be-bdac-4436-bd16-800d226388a2) width="90%"/>
-</div>
+
 
 ## Overview
 
