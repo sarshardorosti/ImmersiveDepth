@@ -1,9 +1,8 @@
 # ImmersiveDepth: Advanced 360-Degree Depth Estimation
 
-![visitors](https://visitor-badge.laobi.icu/badge?page_id=Totoro97/PeRF)
-
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=sarshardorosti/ImmersiveDepth)
 <div align="center">
-    <img src="MY---------------------" width="90%"/>
+    <img src=![Diagram](https://github.com/user-attachments/assets/cddf80be-bdac-4436-bd16-800d226388a2) width="90%"/>
 </div>
 
 ## Overview
@@ -202,6 +201,7 @@ Image post-processing is applied to enhance the quality of the output depth maps
     ```
 The combination of model outputs and image post-processing plays a critical role in the ImmersiveDepth project. By intelligently integrating predictions from multiple models and applying advanced image processing techniques, the system achieves higher accuracy and stability in depth estimation. This approach significantly improves the system's resilience to various environmental conditions and enhances detail recognition, providing robust depth estimation solutions.
 
+![OursTest1 copy 3](https://github.com/user-attachments/assets/f5cc7df6-8625-4d80-b675-8332a99f030c)
 
 ---
 - **Geometry Refinement**: Implemented in `pano_geo_refiner.py` and `geo_utils.py`, this process refines depth and normal maps by optimizing geometric consistency, aligning predictions across multiple views, and iteratively improving results.
