@@ -78,7 +78,7 @@ ImmersiveDepth
 
 The initialization phase involves setting up the environment, loading configuration files, and preparing the system for depth estimation. Key files in this stage include:
 
-- **`core_exp_runner.py`**: This script uses `Hydra` to load configurations from `config.yaml`, `depth.yaml`, and `normal.yaml`, setting parameters such as model paths and data directories. It initializes the `DepthEstimator` class, which manages the entire estimation process.
+- **`core_exp_runner.py`**: This script uses `Hydra` to load configurations from `config.yaml`, setting parameters such as model paths and data directories. It initializes the `DepthEstimator` class, which manages the entire estimation process.
 
     ```python
     @hydra.main(config_path=".", config_name="config")
@@ -175,6 +175,8 @@ The combination of outputs from **MiDaS v3.1** and **Depth Anything V2** is cruc
 #### Image Post-Processing
 
 Image post-processing is applied to enhance the quality of the output depth maps, addressing issues like noise, fog, and sharpness. This is accomplished through various techniques implemented in:
+
+![Normal](https://github.com/user-attachments/assets/e37c2e16-20a8-4734-b7d5-5ebd22385e1a)
 
 - **`augmentation.py`**: This file applies image enhancement techniques such as Gaussian filtering, CLAHE (Contrast Limited Adaptive Histogram Equalization), and dehazing to improve the clarity and quality of the depth maps.
 
