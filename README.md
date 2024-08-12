@@ -178,6 +178,8 @@ Image post-processing is applied to enhance the quality of the output depth maps
 
 - **`augmentation.py`**: This file applies image enhancement techniques such as Gaussian filtering, CLAHE (Contrast Limited Adaptive Histogram Equalization), and dehazing to improve the clarity and quality of the depth maps.
 
+![PostProccessing](https://github.com/user-attachments/assets/26c7736f-3c50-4f44-982d-f8b2daf4fcbf)
+
     ```python
     class GaussianFilter(object):
         def __call__(self, image):
