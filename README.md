@@ -354,6 +354,8 @@ The developed system has demonstrated superior performance in creating precise d
 - **Improved Accuracy**: The integrated model outperforms standalone models in various metrics, indicating enhanced depth prediction accuracy.
 - **Efficient Processing**: Optimized for GPU processing, the system provides efficient depth estimation with reduced hardware requirements.
 - **Comprehensive Solution**: The project offers a robust solution for depth estimation, applicable in VR, 3D mapping, and other domains.
+![Screenshot 2024-08-12 161053](https://github.com/user-attachments/assets/64e1deef-3a8f-4fd6-a29f-d1db783353d1)
+![Screenshot 2024-08-12 161109](https://github.com/user-attachments/assets/5821db77-7708-4a35-a25d-435dbeef8a22)
 
 
 ## References
