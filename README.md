@@ -7,7 +7,9 @@
     <a href='https://www.cs.hku.hk/people/academic-staff/wenping' target='_blank'>Zhidong Xiao<sup></sup></a>&emsp;
     <a href='https://www.researchgate.net/profile/Xiaosong-Yang-4' target='_blank'>Xiaosong Yang Loy<sup></sup></a>&emsp;
 </div>
-
+<div>
+    Bournemouth University,Faculty of Media and Communication, NCCA - National Carpet Cleaners Association, Master of Science degree Thesis, Artificial Intelligence for Media </sup>
+</div>
 ## Overview
 
 ImmersiveDepth is a cutting-edge project designed to provide robust and accurate monocular depth estimation (MDE) from 360-degree images. By integrating advanced models such as MiDaS v3.1 and Depth Anything V2, this project addresses the challenges of depth perception under varying environmental conditions, scale variations, and image complexities. It leverages the strengths of both models to enhance overall performance, offering a comprehensive solution for applications in Animation, Game, AR, VR, and 3D visualization.
