@@ -16,6 +16,8 @@ ImmersiveDepth is a cutting-edge project designed to provide robust and accurate
 - **Global Disparity Alignment**: Aligns predicted disparity maps using advanced affine transformation techniques to ensure consistent global alignment.
 - **Robust Preprocessing**: Employs a range of image enhancement techniques such as Gaussian filtering, CLAHE, and dehazing to improve depth map quality.
 - **Efficient Workflow**: Optimized for GPU processing with minimal hardware requirements, providing faster and more efficient depth estimation.
+  
+![GIFMaker_me (2)](https://github.com/user-attachments/assets/bcff77c5-cbf9-4917-8888-49e178deeb3a)
 
 ## Table of Contents
 
