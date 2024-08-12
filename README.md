@@ -17,9 +17,13 @@ ImmersiveDepth is a cutting-edge project designed to provide robust and accurate
 - **Robust Preprocessing**: Employs a range of image enhancement techniques such as Gaussian filtering, CLAHE, and dehazing to improve depth map quality.
 - **Efficient Workflow**: Optimized for GPU processing with minimal hardware requirements, providing faster and more efficient depth estimation.
 
-![GIFMaker_me (3)](https://github.com/user-attachments/assets/5e68c802-8e7c-459f-8fc1-8d0e436c2106)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5e68c802-8e7c-459f-8fc1-8d0e436c2106" alt="GIFMaker_me (3)">
+</p>
 
-![GIFMaker_me (2)](https://github.com/user-attachments/assets/bcff77c5-cbf9-4917-8888-49e178deeb3a)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/bcff77c5-cbf9-4917-8888-49e178deeb3a" alt="GIFMaker_me (2)">
+</p>
 
 ## Table of Contents
 
