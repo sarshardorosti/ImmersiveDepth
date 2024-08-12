@@ -351,9 +351,12 @@ The developed system has demonstrated superior performance in creating precise d
 
 ### Key Findings
 
-- **Improved Accuracy**: The integrated model outperforms standalone models in various metrics, indicating enhanced depth prediction accuracy.
-- **Efficient Processing**: Optimized for GPU processing, the system provides efficient depth estimation with reduced hardware requirements.
-- **Comprehensive Solution**: The project offers a robust solution for depth estimation, applicable in VR, 3D mapping, and other domains.
+- **Improved Accuracy**: The integrated model showed improvements of 37%, 55%, and 33% in abs_rel, sq_rel, and rmse metrics, respectively, compared to previous models.
+- **ImmersiveDepth Advantage**: A 28% improvement over Midas 3.1, marking a significant advancement in 3D simulation using monocular depth estimation.
+- **Model Integration**: By intelligently combining DepthAnything v2 and ImmersiveDepth, and utilizing advanced optimization and post-processing techniques, significant enhancements in both quantitative and qualitative metrics were achieved.
+- **Retained Strengths**: This combined approach preserved the strengths of each model while mitigating their weaknesses through optimization techniques.
+- **Broad Applicability**: The final system is capable of producing accurate and reliable depth maps from 360-degree images, applicable in fields such as Virtual Reality, 3D mapping, and architectural visualization.
+- 
 ![Screenshot 2024-08-12 161053](https://github.com/user-attachments/assets/64e1deef-3a8f-4fd6-a29f-d1db783353d1)
 ![Screenshot 2024-08-12 161109](https://github.com/user-attachments/assets/5821db77-7708-4a35-a25d-435dbeef8a22)
 
