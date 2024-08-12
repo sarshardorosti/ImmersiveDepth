@@ -7,9 +7,9 @@ Supervisor: Zhidong Xiao
 Adviser: Xiaosong Yang
 
 <div>
-    <a href='https://quartz-khaan-c6f.notion.site/Peng-Wang-0ab0a2521ecf40f5836581770c14219' target='_blank'>Sarshar Dorosti*<sup>2</sup></a>&emsp;
-    <a href='https://www.cs.hku.hk/people/academic-staff/wenping' target='_blank'>Zhidong Xiao<sup>3</sup></a>&emsp;
-    <a href='https://www.researchgate.net/profile/Xiaosong-Yang-4' target='_blank'>Xiaosong Yang Loy<sup>1</sup></a>&emsp;
+    <a href='https://quartz-khaan-c6f.notion.site/Peng-Wang-0ab0a2521ecf40f5836581770c14219' target='_blank'>Sarshar Dorosti*<sup></sup></a>&emsp;
+    <a href='https://www.cs.hku.hk/people/academic-staff/wenping' target='_blank'>Zhidong Xiao<sup></sup></a>&emsp;
+    <a href='https://www.researchgate.net/profile/Xiaosong-Yang-4' target='_blank'>Xiaosong Yang Loy<sup></sup></a>&emsp;
 </div>
 
 ## Overview
